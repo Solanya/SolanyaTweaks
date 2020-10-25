@@ -1,0 +1,30 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/">
+	<Script file="SolanyaTweaks.lua"/>
+
+	<Button name="SolanyaTweaksGuildCountButton" frameStrata="LOW" frameLevel="4" parent="UIParent" mixin="SolanyaTweaksMixin">
+		<Size x="32" y="32"/>
+		<Anchors>
+			<Anchor point="LEFT" relativeTo="QuickJoinToastButton" relativePoint="RIGHT" x="2" y="0"/>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture parentKey="button" hidden="false" alpha="1" alphaMode="BLEND" atlas="quickjoin-button-friendslist-up" setAllPoints="true"/>
+			</Layer>
+			<Layer level="BORDER">
+				<FontString parentKey="count" inherits="GameFontHighlightSmall" text="0">
+					<Anchors>
+						<Anchor point="BOTTOM" relativeKey="$parent" relativePoint="BOTTOM" x="0" y="4"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnLoad method="OnLoad"/>
+			<OnClick method="OnClick"/>
+			<OnMouseDown method="OnMouseDown"/>
+			<OnMouseUp method="OnMouseUp"/>
+			<OnEvent method="OnEvent"/>
+		</Scripts>
+		<HighlightTexture file="Interface\Buttons\UI-Common-MouseHilight" alphaMode="ADD"/>
+	</Button>
+</Ui>
